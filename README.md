@@ -10,7 +10,7 @@ FastAPI is a Python web framework for building APIs with type hints: request bod
 
 - One small service, no database, no required variables: it boots on the 0.5 GB plan with room to spare.
 - Railway builds it from the `Dockerfile` (Python 3.13 slim), runs it as a non-root user, and only routes traffic to a new deploy once `/health` answers.
-- A typo in a variable (`LOG_LEVEL=loud`, `DOCS_ENABLED=maybe`) logs a warning and falls back to the default instead of crashing the deploy.
+- A typo in a variable (`LOG_LEVEL=loud`, `WEB_CONCURRENCY=two`) logs a warning and falls back to the default instead of crashing the deploy.
 
 ## Common Use Cases
 
@@ -42,7 +42,8 @@ FastAPI is a Python web framework for building APIs with type hints: request bod
 | `app/config.py` | Settings read from variables, with safe defaults |
 | `app/log_config.py` | JSON log lines (Railway filters on `level`, `path`, `status`, `ms`) |
 | `tests/` | pytest suite using FastAPI's `TestClient` |
-| `Dockerfile` | Build and start command; FastAPI and Uvicorn versions are pinned here |
+| `Dockerfile` | Build steps; FastAPI and Uvicorn versions are pinned here |
+| `start.sh` | Start command: host, port and worker count |
 
 **Make it yours:** eject the template in the service's settings to get your own copy of the repo. Add routers under `app/routers/`, include them in `app/main.py`, put new packages in `requirements.txt`, and push: every push redeploys.
 

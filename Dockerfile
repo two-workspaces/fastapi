@@ -17,8 +17,4 @@ COPY . .
 RUN useradd --create-home --uid 1000 app && chown -R app /app
 USER app
 
-# One worker fits the 0.5 GB plan; raise WEB_CONCURRENCY on bigger plans.
-# HOST=0.0.0.0 serves Railway's healthcheck, public domain and private network
-# (IPv4 since Oct 2025). Set HOST=:: in older projects whose private network is IPv6-only.
-CMD exec uvicorn app.main:app --host "${HOST:-0.0.0.0}" --port "${PORT:-8000}" \
-    --workers "${WEB_CONCURRENCY:-1}" --proxy-headers --forwarded-allow-ips "*"
+CMD ["./start.sh"]
