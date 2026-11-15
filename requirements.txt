@@ -1,0 +1,5 @@
+# Your app's dependencies. Add packages here; every push rebuilds the image.
+# FastAPI and Uvicorn are pinned by FASTAPI_VERSION and UVICORN_VERSION in the
+# Dockerfile, so bump them there.
+fastapi[standard]
+uvicorn[standard]

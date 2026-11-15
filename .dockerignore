@@ -1,0 +1,8 @@
+.git
+.venv
+__pycache__
+.pytest_cache
+.env
+template-config.json
+template-meta.json
+README.md
