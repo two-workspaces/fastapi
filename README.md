@@ -26,7 +26,7 @@ FastAPI is a Python web framework for building APIs with type hints: request bod
 ### Deployment Dependencies
 
 - [FastAPI documentation](https://fastapi.tiangolo.com)
-- [Uvicorn](https://www.uvicorn.org)
+- [Uvicorn](https://uvicorn.dev)
 - [Pydantic](https://docs.pydantic.dev)
 
 ### Implementation Details
