@@ -2,7 +2,7 @@
 FROM python:3.13-slim
 
 # upgrade: pypi fastapi
-0.163.1=ARG FASTAPI_VERSION=0.165.0=0.163.1
+ARG FASTAPI_VERSION=0.165.0
 # upgrade: pypi uvicorn
 ARG UVICORN_VERSION=0.54.0
 
